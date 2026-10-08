@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEDH 2000 | Patagonia Instrumental</title>
+    <meta
+      name="description"
+      content="SEDH 2000: equipo electromagnético desarrollado en Rosario por Patagonia Instrumental. Conocé cómo es una sesión y coordiná la tuya."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <!-- ============ HEADER ============ -->
+    <header class="header" id="header">
+      <div class="container header__inner">
+        <a href="#inicio" class="logo" aria-label="SEDH 2000, ir al inicio">
+          <span class="logo__mark" aria-hidden="true"></span>
+          <span>SEDH <strong>2000</strong></span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav" id="nav">
+          <a href="#equipo">El equipo</a>
+          <a href="#sesion">La sesión</a>
+          <a href="#nosotros">Quiénes somos</a>
+          <a href="#preguntas">Preguntas</a>
+          <a href="#contacto" class="btn btn--small">Coordinar sesión</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="inicio">
+        <div class="container hero__inner">
+          <div class="hero__text reveal">
+            <span class="tag">Industria Argentina · Rosario, Santa Fe</span>
+            <h1>SEDH 2000</h1>
+            <p class="hero__lead">
+              Un equipo electromagnético diseñado y fabricado en Rosario por Patagonia Instrumental.
+              Conocelo de cerca y viví una sesión guiada por su creador.
+            </p>
+            <div class="hero__actions">
+              <a href="#contacto" class="btn">Quiero coordinar una sesión</a>
+              <a href="#sesion" class="btn btn--ghost">¿Cómo es una sesión?</a>
+            </div>
+          </div>
+
+          <div class="hero__visual reveal" aria-hidden="true">
+            <div class="waves">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="hero__core">
+              <span>SEDH</span>
+              <small>2000</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EL EQUIPO ============ -->
+      <section class="section" id="equipo">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="eyebrow">El equipo</span>
+            <h2>Ingeniería electrónica hecha en casa</h2>
+            <p>
+              El SEDH 2000 se diseñó y se arma en Rosario. Cada componente está pensado para que la
+              sesión sea simple, cómoda y ajustada a cada persona.
+            </p>
+          </header>
+
+          <div class="equipo">
+            <figure class="equipo__photo reveal">
+              <img src="/info/sedh2000-equipo.jpg" alt="Equipo SEDH 2000 completo: consola con panel de control sobre un pie con ruedas y las dos bobinas" loading="lazy" />
+              <figcaption>SEDH 2000</figcaption>
+            </figure>
+
+            <div class="cards">
+              <article class="card reveal">
+                <div class="card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h4M7 14h2M15 10v4"/></svg>
+                </div>
+                <h3>Módulo de modulación</h3>
+                <p>Genera un barrido de frecuencia modulada. Combina procesamiento digital y modulación analógica.</p>
+              </article>
+
+              <article class="card reveal">
+                <div class="card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 12c0-3 2-5 4-5s4 2 4 5-2 5-4 5-4-2-4-5zM12 12c0-3 2-5 4-5s4 2 4 5-2 5-4 5-4-2-4-5z"/></svg>
+                </div>
+                <h3>Dos bobinas</h3>
+                <p>Se colocan a la altura de los tobillos. El equipo trabaja con un campo externo, sin electrodos sobre la piel.</p>
+              </article>
+
+              <article class="card reveal">
+                <div class="card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="3"/><circle cx="12" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M6 9V5M12 9V5M18 9V5"/></svg>
+                </div>
+                <h3>Panel con tres controles</h3>
+                <p>Tres perillas ajustan la sesión según el peso, la edad y la contextura de cada persona.</p>
+              </article>
+
+              <article class="card reveal">
+                <div class="card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 14h16l-2 5H6z"/><path d="M8 14c0-3 1-5 4-8 3 3 4 5 4 8"/></svg>
+                </div>
+                <h3>Batea para los pies</h3>
+                <p>Los pies se apoyan en una batea con agua potable durante toda la sesión.</p>
+              </article>
+            </div>
+          </div>
+
+          <!-- Panel de control: ajuste por persona -->
+          <div class="panel reveal">
+            <h3 class="panel__title">Una sesión a tu medida</h3>
+            <div class="panel__grid">
+              <div class="knob">
+                <div class="knob__dial" data-knob="1" aria-hidden="true"><span></span></div>
+                <h4>Tiempo</h4>
+                <p>Según el peso corporal: de <strong>5 a 35 minutos</strong>.</p>
+              </div>
+              <div class="knob">
+                <div class="knob__dial" data-knob="2" aria-hidden="true"><span></span></div>
+                <h4>Edad</h4>
+                <p>Ajusta la intensidad del barrido según la edad.</p>
+              </div>
+              <div class="knob">
+                <div class="knob__dial" data-knob="3" aria-hidden="true"><span></span></div>
+                <h4>Contextura</h4>
+                <p>Ajusta la configuración según la composición corporal.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ LA SESIÓN ============ -->
+      <section class="section section--alt" id="sesion">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="eyebrow">La sesión</span>
+            <h2>¿Cómo es una sesión?</h2>
+            <p>Simple, tranquila y acompañada de principio a fin.</p>
+          </header>
+
+          <ol class="steps">
+            <li class="step reveal">
+              <span class="step__num">01</span>
+              <h3>Charla previa</h3>
+              <p>Te contamos cómo funciona el equipo, respondemos tus dudas y vemos si la sesión es para vos.</p>
+            </li>
+            <li class="step reveal">
+              <span class="step__num">02</span>
+              <h3>Preparación</h3>
+              <p>Te sentás cómodo, apoyás los pies en la batea con agua y se colocan las bobinas en los tobillos.</p>
+            </li>
+            <li class="step reveal">
+              <span class="step__num">03</span>
+              <h3>Ajuste del equipo</h3>
+              <p>Se calibran los tres controles según tu peso, tu edad y tu contextura.</p>
+            </li>
+            <li class="step reveal">
+              <span class="step__num">04</span>
+              <h3>Sesión</h3>
+              <p>Entre 5 y 35 minutos, según tu peso. Solo tenés que relajarte.</p>
+            </li>
+          </ol>
+
+          <div class="gallery">
+            <figure class="gallery__item reveal">
+              <img src="/info/sedh2000-sesion-1.jpg" alt="Persona sentada en un sillón con los pies en las bateas y las bobinas en los tobillos, junto al equipo" loading="lazy" />
+            </figure>
+            <figure class="gallery__item reveal">
+              <img src="/info/sedh2000-sesion-2.jpg" alt="Vista de frente de una sesión: pies en las dos bateas con las bobinas colocadas" loading="lazy" />
+            </figure>
+            <figure class="gallery__item reveal">
+              <img src="/info/sedh2000-sesion-3.jpg" alt="Sesión vista desde el equipo, con el panel de control encendido en primer plano" loading="lazy" />
+            </figure>
+          </div>
+
+          <div class="note reveal">
+            <strong>Protocolo del fabricante:</strong> una sesión diaria durante un ciclo de 5 a 8 sesiones.
+            Te lo explicamos en detalle en la charla previa.
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ QUIÉNES SOMOS ============ -->
+      <section class="section" id="nosotros">
+        <div class="container about">
+          <div class="about__text reveal">
+            <span class="eyebrow">Quiénes somos</span>
+            <h2>Patagonia Instrumental</h2>
+            <p class="about__slogan">Tecnología para la vida</p>
+            <p>
+              Somos un emprendimiento de ingeniería de Rosario, Santa Fe. Diseñamos y fabricamos
+              equipos electrónicos propios, con componentes y mano de obra argentina.
+            </p>
+            <p>
+              El SEDH 2000 es un desarrollo del <strong>Ing. Juan José Cinalli</strong>, ingeniero
+              electrónico e investigador, que atiende personalmente cada consulta.
+            </p>
+          </div>
+
+          <div class="about__stats reveal">
+            <div class="stat"><strong>100%</strong><span>Diseño y fabricación nacional</span></div>
+            <div class="stat"><strong>Rosario</strong><span>Santa Fe, Argentina</span></div>
+            <div class="stat"><strong>1 a 1</strong><span>Atención personalizada</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ANTES DE RESERVAR ============ -->
+      <section class="section section--alt" id="importante">
+        <div class="container">
+          <div class="important reveal">
+            <h2>Antes de reservar</h2>
+            <p>Por indicación del fabricante, el equipo <strong>no se usa</strong> en:</p>
+            <ul>
+              <li>Niños menores de 6 años y adultos mayores de 85 años.</li>
+              <li>Personas con enfermedades agudas o en curso.</li>
+              <li>Personas con cuadros oncológicos.</li>
+              <li>Personas bajo tratamiento psiquiátrico.</li>
+            </ul>
+            <p>
+              Si usás marcapasos u otro dispositivo implantado, estás embarazada o tenés alguna duda,
+              consultalo antes de coordinar.
+            </p>
+            <p class="important__disclaimer">
+              El SEDH 2000 no es un tratamiento médico y no reemplaza el diagnóstico ni el tratamiento
+              de un profesional de la salud. No suspendas ni modifiques ningún tratamiento indicado por tu médico.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PREGUNTAS ============ -->
+      <section class="section" id="preguntas">
+        <div class="container container--narrow">
+          <header class="section__head reveal">
+            <span class="eyebrow">Preguntas frecuentes</span>
+            <h2>Lo que más nos consultan</h2>
+          </header>
+
+          <div class="faq" id="faq">
+            <div class="faq__item reveal">
+              <button class="faq__q" aria-expanded="false">¿Cuánto dura una sesión?</button>
+              <div class="faq__a"><p>Entre 5 y 35 minutos, según el peso de cada persona. Sumale unos minutos para la preparación.</p></div>
+            </div>
+            <div class="faq__item reveal">
+              <button class="faq__q" aria-expanded="false">¿Se siente algo durante la sesión?</button>
+              <div class="faq__a"><p>El equipo trabaja con bobinas externas: no se colocan electrodos ni agujas. En la charla previa te explicamos qué vas a notar.</p></div>
+            </div>
+            <div class="faq__item reveal">
+              <button class="faq__q" aria-expanded="false">¿Tengo que preparar algo?</button>
+              <div class="faq__a"><p>Venir con los pies limpios. Si tenés callosidades, conviene retirarlas antes. Cualquier otra indicación te la damos al coordinar.</p></div>
+            </div>
+            <div class="faq__item reveal">
+              <button class="faq__q" aria-expanded="false">¿Cuántas sesiones se hacen?</button>
+              <div class="faq__a"><p>El protocolo del fabricante indica una sesión diaria durante un ciclo de 5 a 8 sesiones.</p></div>
+            </div>
+            <div class="faq__item reveal">
+              <button class="faq__q" aria-expanded="false">¿Qué puedo esperar?</button>
+              <div class="faq__a"><p>Escribinos y el Ing. Cinalli te explica personalmente cómo funciona el equipo y responde todas tus preguntas antes de que decidas.</p></div>
+            </div>
+            <div class="faq__item reveal">
+              <button class="faq__q" aria-expanded="false">¿Dónde se hacen las sesiones?</button>
+              <div class="faq__a"><p>En Rosario, Santa Fe. Te pasamos la dirección y los horarios disponibles cuando nos contactás.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACTO ============ -->
+      <section class="section section--dark" id="contacto">
+        <div class="container contact">
+          <div class="contact__info reveal">
+            <span class="eyebrow eyebrow--light">Contacto</span>
+            <h2>Coordiná tu sesión</h2>
+            <p>Dejanos tus datos y te respondemos por WhatsApp. Sin compromiso: primero charlamos y después decidís.</p>
+
+            <ul class="contact__list">
+              <li><span>WhatsApp</span><a id="waDirect" href="#" target="_blank" rel="noopener"></a></li>
+              <li><span>Email</span><a id="mailDirect" href="#"></a></li>
+              <li><span>Ubicación</span><p>Rosario, Santa Fe, Argentina</p></li>
+            </ul>
+          </div>
+
+          <form class="form reveal" id="contactForm" novalidate>
+            <div class="form__row">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" required />
+              <small class="form__error"></small>
+            </div>
+            <div class="form__row">
+              <label for="telefono">Teléfono</label>
+              <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="341 555 1234" required />
+              <small class="form__error"></small>
+            </div>
+            <div class="form__row">
+              <label for="localidad">Localidad</label>
+              <input id="localidad" name="localidad" type="text" autocomplete="address-level2" />
+              <small class="form__error"></small>
+            </div>
+            <div class="form__row">
+              <label for="horario">¿Cuándo te queda mejor?</label>
+              <select id="horario" name="horario">
+                <option value="Indistinto">Indistinto</option>
+                <option value="Mañana">Mañana</option>
+                <option value="Tarde">Tarde</option>
+              </select>
+            </div>
+            <div class="form__row">
+              <label for="mensaje">Consulta (opcional)</label>
+              <textarea id="mensaje" name="mensaje" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn--full">Enviar por WhatsApp</button>
+            <p class="form__hint">Se abre WhatsApp con tu mensaje listo para enviar.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p><strong>Patagonia Instrumental</strong> · Tecnología para la vida · Industria Argentina</p>
+        <p class="footer__small">
+          El SEDH 2000 no es un tratamiento médico ni reemplaza la consulta con un profesional de la salud.
+        </p>
+        <p class="footer__small">© <span id="year"></span> alejo bonfi</p>
+      </div>
+    </footer>
+
+    <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+    </a>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
