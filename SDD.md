@@ -178,12 +178,11 @@ Tipos, interfaces, valores en `config.ts`.
 | 001 | [Landing base](specs/001-landing-base/spec.md) | Hecha (retroactiva) | Falta CA9 (sin JS) y CA10 (prueba en celulares reales). |
 | 002 | Datos de atención confirmados | Borrador | Dirección y horarios. Espera respuesta del cliente. |
 | 003 | Permisos de imágenes | Borrador | **Bloquea la publicación.** Si no hay permiso, recortar/reemplazar fotos. |
-| 004 | Optimización de imágenes | Borrador | `public/img/modulo.jpg` ya no existe ✅. Falta: WebP, `width`/`height`, tamaños responsive. |
-| 005 | Revisión legal de textos | Borrador | Auditar textos contra la regla 3.1.1 y que el cliente los apruebe por escrito. |
-| 006 | SEO y metadatos | Borrador | Favicon, Open Graph (vista previa en WhatsApp), canonical, datos estructurados, robots/sitemap. |
-| 007 | Deploy | Borrador | Hosting + dominio + HTTPS. |
-| 008 | Robustez sin JavaScript | Borrador | `.reveal` y FAQ ocultan contenido sin JS; links de contacto vacíos sin JS. |
-| 009 | Medición de consultas | Idea | Contar clics a WhatsApp / envíos del formulario. |
+| 004 | Optimización de imágenes | Borrador | `public/img/modulo.jpg` ya no existe ✅. Falta: WebP, `width`/`height`, tamaños responsive. ||
+| 005 | SEO y metadatos | En desarrollo | Hecho: favicon, Open Graph + `og.jpg`, canonical, robots/sitemap. Falta: datos estructurados y verificar la vista previa en WhatsApp. |
+| 006 | Deploy | Borrador | Hosting + dominio + HTTPS. |
+| 007 | Robustez sin JavaScript | Borrador | `.reveal` y FAQ ocultan contenido sin JS; links de contacto vacíos sin JS. |
+| 008 | Medición de consultas | Idea | Contar clics a WhatsApp / envíos del formulario. |
 
 > Ideas sueltas que todavía no son spec van en el **Backlog** (sección 8).
 
