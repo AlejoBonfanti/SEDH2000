@@ -4,15 +4,15 @@ export interface ContactConfig {
   whatsapp: string;
   /** Cómo se muestra el número en pantalla. */
   whatsappLabel: string;
-  email: string;
+  //email: string;
   /** Mensaje por defecto del botón flotante de WhatsApp. */
   defaultMessage: string;
 }
 
 export const CONTACT: ContactConfig = {
-  whatsapp: "5493436117232",
-  whatsappLabel: "+54 9 343 611-7232",
-  email: "cinallijj@yahoo.com",
+  whatsapp: "+54 9 3496 44-0587",
+  whatsappLabel: "+54 9 3496 44-0587",
+  //email: "cinallijj@yahoo.com",
   defaultMessage: "Hola! Vi la página del SEDH 2000 y quiero más información sobre las sesiones.",
 };
 
