@@ -175,13 +175,13 @@ Tipos, interfaces, valores en `config.ts`.
 
 | N° | Nombre | Estado | Notas |
 |---|---|---|---|
-| 001 | [Landing base](specs/001-landing-base/spec.md) | Hecha (retroactiva) | Falta CA9 (sin JS) y CA10 (prueba en celulares reales). |
+| 001 | [Landing base](specs/001-landing-base/spec.md) | Hecha (retroactiva) | Falta CA10 (prueba en celulares reales). |
 | 002 | Datos de atención confirmados | Borrador | Dirección y horarios. Espera respuesta del cliente. |
 | 003 | Permisos de imágenes | Borrador | **Bloquea la publicación.** Si no hay permiso, recortar/reemplazar fotos. |
 | 004 | Optimización de imágenes | Borrador | `public/img/modulo.jpg` ya no existe ✅. Falta: WebP, `width`/`height`, tamaños responsive. ||
 | 005 | SEO y metadatos | En desarrollo | Hecho: favicon, Open Graph + `og.jpg`, canonical, robots/sitemap. Falta: datos estructurados y verificar la vista previa en WhatsApp. |
 | 006 | Deploy | Borrador | Hosting + dominio + HTTPS. |
-| 007 | Robustez sin JavaScript | Borrador | `.reveal` y FAQ ocultan contenido sin JS; links de contacto vacíos sin JS. |
+| 007 | Robustez sin JavaScript | Hecha | Contenido visible y FAQ abierto sin JS; links de contacto escritos en el HTML desde `config.ts` (vite.config.ts); alternativa al formulario. |
 | 008 | Medición de consultas | Idea | Contar clics a WhatsApp / envíos del formulario. |
 
 > Ideas sueltas que todavía no son spec van en el **Backlog** (sección 8).

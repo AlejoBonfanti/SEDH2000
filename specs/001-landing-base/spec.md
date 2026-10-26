@@ -51,7 +51,7 @@ a coordinar una sesión por WhatsApp — sin hacer promesas de salud.
 - [x] **CA6** — Cuando cambio el número en `src/config.ts`, entonces se actualizan el link de contacto, el botón flotante y el destino del formulario.
 - [x] **CA7** — La sección "Antes de reservar" y el disclaimer del footer están presentes.
 - [x] **CA8** — `tsc` compila sin errores en modo `strict`.
-- [ ] **CA9** — Con JavaScript desactivado, todo el contenido sigue siendo legible. → **No se cumple** (ver spec 008).
+- [x] **CA9** — Con JavaScript desactivado, todo el contenido sigue siendo legible. (resuelto 2026-10-20)
 - [ ] **CA10** — Verificado en dispositivo real (Android + iPhone). → Pendiente.
 
 ## Fuera de alcance

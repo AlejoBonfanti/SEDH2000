@@ -10,4 +10,4 @@
 - [x] **T8** — Fotos del cliente recortadas como `sedh2000-*.jpg`
 - [x] **T9** — `tsc --noEmit` sin errores (verificado 2026-10-07)
 - [ ] **T10** — Probar en Android e iPhone reales (CA10)
-- [ ] **T11** — Resolver CA9 (contenido visible sin JS) → derivado a spec 008
+- [x] **T11** — Resolver CA9 (contenido visible sin JS)

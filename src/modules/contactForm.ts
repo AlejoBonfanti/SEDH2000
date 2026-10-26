@@ -25,7 +25,7 @@ function readForm(form: HTMLFormElement): ContactData {
 
 function validate(data: ContactData): Errors {
   const errors: Errors = {};
-  if (data.nombre.length < 2) errors.nombre = "Contanos tu nombre.";
+  if (data.nombre.length < 2) errors.nombre = "Contame tu nombre.";
 
   const digits = data.telefono.replace(/\D/g, "");
   if (digits.length < 8) errors.telefono = "Ingresá un teléfono válido.";
