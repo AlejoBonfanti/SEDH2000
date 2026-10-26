@@ -2,6 +2,10 @@ import { initNav } from "./modules/nav";
 import { initReveal } from "./modules/reveal";
 import { initFaq } from "./modules/faq";
 import { initContactForm } from "./modules/contactForm";
+import { inject } from "@vercel/analytics";
+
+// Vercel Web Analytics (el proyecto es Vite sin framework, por eso se usa inject() y no el componente de Next).
+inject();
 
 // Avisa al script del <head> que el JS cargó (si no, vuelve a la versión sin JS).
 document.documentElement.classList.add("js");
