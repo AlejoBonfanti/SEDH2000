@@ -10,11 +10,11 @@ export interface ContactConfig {
 }
 
 export const CONTACT: ContactConfig = {
-  whatsapp: "+54 9 3496 44-0587",
+  whatsapp: "5493496440587",
   whatsappLabel: "+54 9 3496 44-0587",
   //email: "cinallijj@yahoo.com",
   defaultMessage: "Hola! Vi la página del SEDH 2000 y quiero más información sobre las sesiones.",
 };
 
 export const waLink = (message: string): string =>
-  `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(message)}`;
+  `https://wa.me/${CONTACT.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
