@@ -1,3 +1,4 @@
+import { inject } from "@vercel/analytics";
 import { initNav } from "./modules/nav";
 import { initReveal } from "./modules/reveal";
 import { initFaq } from "./modules/faq";
@@ -17,6 +18,9 @@ function updateYear(): void {
   const year = document.querySelector<HTMLSpanElement>("#year");
   if (year) year.textContent = String(new Date().getFullYear());
 }
+
+// Initialize Vercel Analytics
+inject();
 
 document.addEventListener("DOMContentLoaded", () => {
   updateYear();
