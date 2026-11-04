@@ -1,51 +1,56 @@
 # SEDH 2000 — Landing
 
-Landing en **Go** con plantillas [templ](https://templ.guide) y [htmx](https://htmx.org) para el formulario.
-Se publica en Vercel como función serverless. Ver [spec 009](specs/009-migracion-go/spec.md).
+Landing page para coordinar sesiones con el equipo **SEDH 2000** en Esperanza, Santa Fe.
+Página única: presenta el equipo, cómo es una sesión y lleva a coordinar por WhatsApp.
 
-## Instalar (una sola vez)
+🔗 **[sedh-2000.vercel.app](https://sedh-2000.vercel.app)**
 
-```powershell
-winget install GoLang.Go                                   # Go 1.24 o superior
-go install github.com/a-h/templ/cmd/templ@v0.3.1001        # misma versión que go.mod
-```
+## Stack
 
-Cerrá y abrí la terminal para que tome `go` y `templ` en el PATH.
+| | |
+|---|---|
+| **Go** | Servidor y lógica del formulario |
+| **[templ](https://templ.guide)** | Plantillas HTML tipadas, compiladas a Go |
+| **[htmx](https://htmx.org)** | Envío del formulario sin recargar la página |
+| **CSS + JS plano** | Estilos y detalles de interfaz (menú, animaciones, FAQ). Sin Node ni build |
+| **Vercel** | Deploy como función serverless de Go; estáticos servidos por el CDN |
 
-## Correrla
+Algunas decisiones:
 
-```powershell
+- **Funciona sin JavaScript.** El contenido se ve completo y el formulario hace un POST común: el servidor valida y redirige a WhatsApp. htmx solo mejora la experiencia (errores sin recargar).
+- **Sin base de datos.** El contacto se resuelve armando un link de `wa.me` con el mensaje; no se guarda nada de lo que escribe la persona.
+- **Un mismo handler** sirve en local (`cmd/server`) y en Vercel (`api/index.go`).
+
+## Correrlo local
+
+Requiere Go 1.24+.
+
+```bash
+go install github.com/a-h/templ/cmd/templ@v0.3.1001
 templ generate --watch --proxy="http://localhost:8080" --cmd="go run ./cmd/server"
 ```
 
-Abrí **http://localhost:7331**. Es un proxy de templ que recarga el navegador cada vez que guardás un `.templ`.
-El servidor corre en el 8080. Si cambiás un `.go` que no es plantilla, cortá con Ctrl+C y volvé a lanzarlo.
-
-Otros comandos:
-
-```powershell
-templ generate      # regenera los *_templ.go (hacelo antes de commitear)
-go test ./...       # tests de validación y rutas
-go run ./cmd/server # solo el servidor, sin recarga
-```
+Abrí **http://localhost:7331** (recarga sola al guardar un `.templ`). Tests: `go test ./...`
 
 ## Estructura
 
 ```
-site/config.go        → WhatsApp, Instagram y mensaje por defecto (editar acá)
-site/contact.go       → validación del formulario y armado del mensaje
-views/*.templ         → HTML de la página (layout, secciones, formulario)
-views/*_templ.go      → generado por templ; no se edita a mano, pero se commitea
-server/server.go      → rutas: GET / y POST /contacto
-cmd/server/main.go    → servidor local
-api/index.go          → función de Vercel (usa el mismo server)
-public/               → estáticos: css, js (app.js + htmx), img, favicon, og.jpg, robots, sitemap
-vercel.json           → config de deploy
-info/                 → material de la clienta (no se publica)
+site/      datos de contacto, validación y armado del mensaje
+views/     plantillas templ (*_templ.go se generan y se commitean)
+server/    rutas: GET / y POST /contacto
+cmd/       servidor local
+api/       función serverless de Vercel
+public/    css, js, imágenes y archivos estáticos
+specs/     especificaciones del proyecto
 ```
 
-## Pendientes
+## Metodología
 
-- Revisar el preview de Vercel de la rama `dev` (tarea T9 de la spec 009).
-- Confirmar con la clienta la dirección y los horarios de atención.
-- Mantener los textos sin promesas de salud (ver la sección "Antes de reservar").
+El proyecto se trabaja con **Spec-Driven Development**: cada cambio arranca con una spec
+(qué y por qué), un plan (cómo) y una lista de tareas. Las reglas y el índice están en
+[`SDD.md`](SDD.md); por ejemplo, la migración de TypeScript + Vite a Go está en
+[`specs/009-migracion-go`](specs/009-migracion-go/spec.md).
+
+---
+
+Desarrollado por [Alejo Bonfanti](https://github.com/AlejoBonfanti).
