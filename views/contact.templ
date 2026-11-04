@@ -1,0 +1,61 @@
+package views
+
+// ContactForm se usa dentro de la página y también como fragmento que devuelve
+// POST /contacto cuando lo pide htmx (hx-swap="outerHTML" reemplaza este mismo <form>).
+//
+// Con datos válidos el servidor redirige directo a WhatsApp: con htmx por el header
+// HX-Redirect, y sin JS con un 303 (el formulario hace un POST común).
+templ ContactForm(f FormState) {
+	<form
+		class="form"
+		id="contactForm"
+		method="post"
+		action="/contacto"
+		hx-post="/contacto"
+		hx-target="this"
+		hx-swap="outerHTML"
+		novalidate
+	>
+		@field(f, "nombre", "Nombre", "text", "name", "", f.Data.Nombre, true)
+		@field(f, "telefono", "Teléfono", "tel", "tel", "3496 55 1234", f.Data.Telefono, true)
+		@field(f, "localidad", "Localidad", "text", "address-level2", "", f.Data.Localidad, false)
+		<div class="form__row">
+			<label for="horario">¿Cuándo te queda mejor?</label>
+			<select id="horario" name="horario">
+				for _, h := range horarios() {
+					<option value={ h } selected?={ h == f.Data.Horario }>{ h }</option>
+				}
+			</select>
+		</div>
+		<div class="form__row">
+			<label for="mensaje">Consulta (opcional)</label>
+			<textarea id="mensaje" name="mensaje" rows="3" maxlength="1000">{ f.Data.Mensaje }</textarea>
+		</div>
+		<button type="submit" class="btn btn--full">Enviar por WhatsApp</button>
+		<p class="form__hint">Se abre WhatsApp con tu mensaje listo para enviar.</p>
+	</form>
+}
+
+templ field(f FormState, name, label, typ, autocomplete, placeholder, value string, required bool) {
+	<div class={ "form__row", templ.KV("has-error", f.hasError(name)) }>
+		<label for={ name }>{ label }</label>
+		<input
+			id={ name }
+			name={ name }
+			type={ typ }
+			autocomplete={ autocomplete }
+			if placeholder != "" {
+				placeholder={ placeholder }
+			}
+			value={ value }
+			maxlength="120"
+			required?={ required }
+			autofocus?={ f.firstError() == name }
+			if f.hasError(name) {
+				aria-invalid="true"
+				aria-describedby={ name + "-error" }
+			}
+		/>
+		<small class="form__error" id={ name + "-error" }>{ f.Errors[name] }</small>
+	</div>
+}

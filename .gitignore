@@ -1,2 +1,9 @@
-node_modules
-dist
+# Go
+*.exe
+tmp/
+
+# templ generate --watch (modo desarrollo)
+*_templ.txt
+
+# Vercel CLI
+.vercel

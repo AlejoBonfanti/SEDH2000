@@ -47,7 +47,7 @@ SEDH2000/
 │   ├── 002-<nombre-corto>/
 │   └── ...
 ├── info/                      ← material del cliente (fuente, no se publica salvo fotos sedh2000-*)
-├── src/ …                     ← código
+├── site/ views/ server/ …     ← código Go (ver README.md)
 └── README.md                  ← cómo correr el proyecto
 ```
 
@@ -65,12 +65,12 @@ SEDH2000/
    Se describe la experiencia de la sesión, no resultados médicos.
 2. **Sección "Antes de reservar" siempre visible** con el aviso de que no reemplaza una consulta médica.
 3. **Fotos de personas** solo con permiso confirmado del cliente.
-4. Datos de contacto, dirección y horarios: **solo los confirmados por el cliente**, centralizados en `src/config.ts`.
+4. Datos de contacto, dirección y horarios: **solo los confirmados por el cliente**, centralizados en `site/config.go`.
 
 ### 3.2 Técnica
-5. Stack: **HTML + CSS + TypeScript + Vite**. Sin frameworks salvo que una spec lo justifique en su plan.
-6. TypeScript en modo `strict`; `npm run build` tiene que pasar sin errores antes de cerrar una spec.
-7. Un módulo por comportamiento en `src/modules/` (nav, faq, reveal, contactForm…).
+5. Stack: **Go + templ + htmx**, deploy en Vercel (función serverless). JS plano solo para lo que pasa en el navegador. Sin frameworks salvo que una spec lo justifique en su plan.
+6. `templ generate`, `go vet ./...` y `go test ./...` tienen que pasar sin errores antes de cerrar una spec.
+7. Lógica en `site/`, HTML en `views/`, rutas en `server/`; un bloque por comportamiento en `public/js/app.js`.
 8. Textos en español rioplatense, tuteo/voseo consistente con lo existente.
 
 ### 3.3 Calidad mínima (aplica a toda spec)
@@ -133,9 +133,9 @@ Resumen de la solución en 3–5 líneas.
 ## Cambios por archivo
 | Archivo | Cambio | Cubre |
 |---|---|---|
-| index.html | Nueva sección `#…` | RF1 |
-| src/modules/x.ts | Nuevo módulo | RF2 |
-| src/styles/main.css | Estilos de … | RNF |
+| views/page.templ | Nueva sección `#…` | RF1 |
+| server/server.go | Nueva ruta | RF2 |
+| public/css/main.css | Estilos de … | RNF |
 
 ## Datos / configuración
 Tipos, interfaces, valores en `config.ts`.
@@ -155,7 +155,7 @@ Tipos, interfaces, valores en `config.ts`.
 - [ ] **T1** — Descripción corta · *listo cuando:* … · *cubre:* RF1
 - [ ] **T2** — … · *depende de:* T1
 - [ ] **T3** — Verificación: recorrer CA1…CAn en mobile y desktop
-- [ ] **T4** — `npm run build` sin errores + actualizar índice en SDD.md
+- [ ] **T4** — `templ generate` + `go vet ./...` + `go test ./...` sin errores + actualizar índice en SDD.md
 ```
 
 ---
@@ -183,6 +183,7 @@ Tipos, interfaces, valores en `config.ts`.
 | 006 | Deploy | Borrador | Hosting + dominio + HTTPS. |
 | 007 | Robustez sin JavaScript | Hecha | Contenido visible y FAQ abierto sin JS; links de contacto escritos en el HTML desde `config.ts` (vite.config.ts); alternativa al formulario. |
 | 008 | Medición de consultas | Idea | Contar clics a WhatsApp / envíos del formulario. |
+| 009 | [Migración a Go + templ + htmx](specs/009-migracion-go/spec.md) | En desarrollo | Rama `dev`. Stack Vite ya borrado. Falta: preview en Vercel, prueba en celulares. |
 
 > Ideas sueltas que todavía no son spec van en el **Backlog** (sección 8).
 
@@ -197,6 +198,7 @@ Tipos, interfaces, valores en `config.ts`.
 | 2026-09 | Datos de contacto centralizados en `src/config.ts` | Un solo lugar para editar |
 | 2026-10 | Adopción de SDD | Ordenar pedidos del cliente y el trabajo con IA |
 | 2026-10 | Spec 001 documentada de forma retroactiva | La landing se construyó antes de adoptar SDD |
+| 2026-11 | Migración a Go + templ + htmx en Vercel serverless (spec 009); reemplaza a HTML + CSS + TS + Vite | Aprender Go y tener servidor para futuras specs (reservas); el formulario pasa a funcionar sin JS |
 
 ---
 
@@ -214,7 +216,7 @@ Tipos, interfaces, valores en `config.ts`.
 - [ ] Todos los criterios de aceptación verificados
 - [ ] Constitución respetada (en especial 3.1 contenido/legal)
 - [ ] Probado en 360 / 768 / 1280 px
-- [ ] `npm run build` OK
+- [ ] `templ generate` + `go vet ./...` + `go test ./...` OK
 - [ ] Estado de la spec → `Hecha` y actualizado el índice (sección 6)
 - [ ] Decisiones nuevas anotadas en la sección 7
 - [ ] Si cambió algo visible: avisar/mostrar al cliente
