@@ -183,7 +183,7 @@ Tipos, interfaces, valores en `config.ts`.
 | 006 | Deploy | Borrador | Hosting + dominio + HTTPS. |
 | 007 | Robustez sin JavaScript | Hecha | Contenido visible y FAQ abierto sin JS; links de contacto escritos en el HTML desde `config.ts` (vite.config.ts); alternativa al formulario. |
 | 008 | Medición de consultas | Idea | Contar clics a WhatsApp / envíos del formulario. |
-| 009 | [Migración a Go + templ + htmx](specs/009-migracion-go/spec.md) | En desarrollo | Rama `dev`. Stack Vite ya borrado. Falta: preview en Vercel, prueba en celulares. |
+| 009 | [Migración a Go + templ + htmx](specs/009-migracion-go/spec.md) | En desarrollo | Rama `dev`. Preview en Vercel OK (2026-11-04). Falta: ver Analytics, prueba en celulares, merge a `main`. |
 
 > Ideas sueltas que todavía no son spec van en el **Backlog** (sección 8).
 

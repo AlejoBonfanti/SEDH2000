@@ -43,7 +43,7 @@ formulario de contacto ahora funciona también sin JavaScript.
 - [x] **CA5** — Dado el formulario con errores sin JS, cuando envío, entonces vuelve la página con los errores y lo que había escrito.
 - [x] **CA6** — Menú móvil (abrir, cerrar al tocar un link, Escape) y FAQ (una pregunta abierta a la vez) funcionan.
 - [x] **CA7** — `go vet ./...` y `go test ./...` pasan.
-- [ ] **CA8** — El preview de Vercel de la rama `dev` responde en `/`, `/contacto` (POST), `/css/main.css`, `/og.jpg` y `/favicon.ico`.
+- [x] **CA8** — El preview de Vercel de la rama `dev` responde en `/`, `/contacto` (POST), `/css/main.css`, `/og.jpg` y `/favicon.ico`. (probado por Alejo 2026-11-04)
 - [ ] **CA9** — Vercel Analytics registra visitas en el preview.
 - [ ] **CA10** — Probado en Android e iPhone reales (heredado de 001).
 
